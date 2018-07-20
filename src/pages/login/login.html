@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Login</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div style="max-width: 500px; margin:0 auto; padding-top: 10px;" text-center>
+    <img src="" style="background-color: transparent; max-width: 400px; width: 100%" />
+    <form name="loginForm" (ngSubmit)="login()" #loginForm="ngForm">
+      <ion-list>
+
+        <ion-item>
+          <ion-label color="primary" floating>
+            <ion-icon name="person"></ion-icon> username
+          </ion-label>
+          <ion-input name="username" type="text" [(ngModel)]="username" #uname="ngModel" required></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label color="primary" floating>
+            <ion-icon name="key"></ion-icon> password
+          </ion-label>
+          <ion-input name="password" type="password" [(ngModel)]="password" #pw="ngModel" required></ion-input>
+        </ion-item>
+        <div text-left padding-left>
+          &nbsp;
+        </div>
+
+      </ion-list>
+
+      <ion-grid style="padding: 0px 0px 0px 0px;">
+        <ion-row>
+          <ion-col col-12>
+            <button ion-button type="submit" color="primary" block [disabled]="waiting" [disabled]="!loginForm.form.valid&&!waiting">
+              Login
+            </button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+      <button ion-button type="button" clear (click)="clearInput()">Reset</button>
+
+    </form>
+  </div>
+</ion-content>
