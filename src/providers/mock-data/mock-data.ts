@@ -40,24 +40,20 @@ export class MockDataProvider implements InMemoryDbService {
         orders: [
           {
             id:"1",
-            product:"watch1",
+            product:"watch1"
           }
         ]
-      },
-      {
-        id:"2"
-        cname: "cust2",
-        }
+      }
     ]
 
     let orders = [
       {
-        id:"1"
-        product: "watch1",
+        id:"1",
+        product: "watch1"
       },
       {
-        id:"2"
-        product: "watch2",
+        id:"2",
+        product: "watch2"
         }
     ]
 
