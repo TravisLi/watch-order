@@ -13,6 +13,7 @@ import { LoginPage } from '../pages/login/login';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { MockDataProvider } from '../providers/mock-data/mock-data';
+import { AuthServiceProvider } from '../providers/auth-service/auth-service'
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import { MockDataProvider } from '../providers/mock-data/mock-data';
     LoginPage,
     AboutPage,
     ContactPage,
-    HomePage,
+    HomePage, 
     TabsPage
   ],
   imports: [
@@ -41,7 +42,8 @@ import { MockDataProvider } from '../providers/mock-data/mock-data';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    MockDataProvider
+    MockDataProvider,
+    AuthServiceProvider
   ]
 })
 export class AppModule {}
