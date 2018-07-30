@@ -7,23 +7,20 @@ import { MyApp } from './app.component';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-import { AboutPage } from '../pages/about/about';
-import { ContactPage } from '../pages/contact/contact';
-import { HomePage } from '../pages/home/home';
-import { TabsPage } from '../pages/tabs/tabs';
 import { LoginPage } from '../pages/login/login';
+import { CustomerSearchPage } from '../pages/customer-search/customer-search';
 
 import { AuthService} from '../providers/auth-service/auth-service';
-import { ComponentsModule } from '../components/components.module';
+import { CustomerService } from '../providers/customer-service/customer-service';
+import { OrderService } from '../providers/order-service/order-service';
+
+import { ComponentsModule } from '../components/components.module';s
 
 @NgModule({
   declarations: [
     MyApp,
     LoginPage,
-    AboutPage,
-    ContactPage,
-    HomePage, 
-    TabsPage
+    CustomerSearchPage
   ],
   imports: [
     BrowserModule,
@@ -35,16 +32,15 @@ import { ComponentsModule } from '../components/components.module';
   entryComponents: [
     MyApp,
     LoginPage,
-    AboutPage,
-    ContactPage,
-    HomePage,
-    TabsPage
+    CustomerSearchPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    AuthService
+    AuthService,
+    CustomerService,
+    OrderService
   ]
 })
 export class AppModule {}

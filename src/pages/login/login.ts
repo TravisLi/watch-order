@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { NavController, LoadingController } from 'ionic-angular';
-import { AuthServiceProvider } from '../../providers/auth-service/auth-service'
+import { AuthService } from '../../providers/auth-service/auth-service'
 import { TabsPage } from '../tabs/tabs'
 
 @Component({
@@ -13,7 +13,7 @@ export class LoginPage {
   @Input() username:string;
   @Input() password:string;
 
-  constructor(public navCtrl: NavController, public loadCtrl:LoadingController, public authService:AuthServiceProvider ) {
+  constructor(public navCtrl: NavController, public loadCtrl:LoadingController, private authService:AuthService ) {
     this.waiting = false;
     this.username = "";
     this.password = "";
@@ -25,7 +25,11 @@ export class LoginPage {
   }
 
   public login():void{
-    this.authService.test()
+    this.authService.login(this.username, this.password).do(user=>{
+      this.authService.user = user;
+    },error=>{
+      console.log(error);
+    })
     //this.navCtrl.push(TabsPage)
   }
 

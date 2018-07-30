@@ -27,8 +27,10 @@ export class AuthService {
     let reqUrl:string = this.loginUrl + parm
     return this.http.get<User>(reqUrl).do(user=>{
       this.user = user;
+      return true;
     },error=>{
       console.log(error);
+      return false;
     })
   }
 
