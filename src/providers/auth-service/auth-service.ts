@@ -1,8 +1,8 @@
-import { HttpClient, HttpResponse } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { User } from '../../models/User';
 import { Observable } from 'rxjs';
-import { catchError } from 'rxjs/operators';
+import { ENV } from '@app/env';
 
 /*
   Generated class for the AuthService provider.
@@ -11,7 +11,6 @@ import { catchError } from 'rxjs/operators';
   and Angular DI.
 */
 
-declare const ENV;
 @Injectable()
 export class AuthService {
 
@@ -25,13 +24,12 @@ export class AuthService {
   public login(username:string, pwd:string):Observable<User>{
     let parm:string = '/${username}/${pwd}/'
     let reqUrl:string = this.loginUrl + parm
-    return this.http.get<User>(reqUrl).do(user=>{
-      this.user = user;
-      return true;
-    },error=>{
-      console.log(error);
-      return false;
+    console.log(reqUrl);
+    const headers:HttpHeaders = new HttpHeaders({
+      authorization:'Basic ' + btoa("user:password")
     })
+    
+    return this.http.get<User>(reqUrl,{headers:headers});
   }
 
   public logout():Observable<boolean>{
@@ -40,6 +38,14 @@ export class AuthService {
       ob.next(true);
       ob.complete();
     });
+  }
+
+  public getUser():User{
+    return this.user;
+  }
+
+  public setUser(user:User){
+    this.user = user;
   }
 
 }

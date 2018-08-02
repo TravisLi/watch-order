@@ -10,11 +10,11 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { LoginPage } from '../pages/login/login';
 import { CustomerSearchPage } from '../pages/customer-search/customer-search';
 
-import { AuthService} from '../providers/auth-service/auth-service';
+import { AuthService } from '../providers/auth-service/auth-service';
 import { CustomerService } from '../providers/customer-service/customer-service';
 import { OrderService } from '../providers/order-service/order-service';
 
-import { ComponentsModule } from '../components/components.module';s
+import { ComponentsModule } from '../components/components.module';
 
 @NgModule({
   declarations: [
@@ -37,10 +37,10 @@ import { ComponentsModule } from '../components/components.module';s
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthService,
     CustomerService,
-    OrderService
+    OrderService,
+    {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
 export class AppModule {}

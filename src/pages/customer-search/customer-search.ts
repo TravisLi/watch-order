@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { LogoutButtonComponent } from '../../components/logout-button/logout-button';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Customer } from '../../models/Customer';
 import { CustomerService } from '../../providers/customer-service/customer-service';
