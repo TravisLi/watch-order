@@ -36,7 +36,7 @@ export class LoginPage {
         this.navCtrl.push(CustomerSearchPage);
       }else{
         let toast = this.toastCtrl.create({
-          message: 'User was added successfully',
+          message: 'Wrong username and password',
           duration: 3000,
           position: 'top'
         });
@@ -45,6 +45,12 @@ export class LoginPage {
     }
     ,error=>{
       loading.dismiss();
+      let toast = this.toastCtrl.create({
+        message: 'Server Error',
+        duration: 3000,
+        position: 'top'
+      });
+      toast.present();
       console.log(error);
     })
   }
