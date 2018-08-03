@@ -19,7 +19,7 @@ export class CustomerService {
   }
 
   public searchCustomers(name:string):Observable<Customer[]>{
-    let parm:string = '/${name}/'
+    let parm:string = `/${name}/`
     let reqUrl:string = this.custUrl + parm
     return this.http.get<Customer[]>(reqUrl);
   }

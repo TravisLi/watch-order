@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { NavController, LoadingController, ToastController } from 'ionic-angular';
 import { AuthService } from '../../providers/auth-service/auth-service';
-import { CustomerSearchPage } from '../../pages/customer-search/customer-search';
+import { CustomerSearchPage } from '../customer-search/customer-search';
 
 @Component({
   selector: 'page-login',

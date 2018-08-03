@@ -22,14 +22,13 @@ export class AuthService {
   }
 
   public login(username:string, pwd:string):Observable<User>{
-    let parm:string = '/${username}/${pwd}/'
+    let parm:string = `/${username}/${pwd}/`
     let reqUrl:string = this.loginUrl + parm
+    console.log(username);
+    console.log(pwd);
     console.log(reqUrl);
-    const headers:HttpHeaders = new HttpHeaders({
-      authorization:'Basic ' + btoa("user:password")
-    })
     
-    return this.http.get<User>(reqUrl,{headers:headers});
+    return this.http.get<User>(reqUrl);
   }
 
   public logout():Observable<boolean>{
