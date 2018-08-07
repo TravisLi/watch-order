@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { Customer } from '../../models/Customer';
+import { Customer } from 'models/Customer';
 import { CustomerService } from '../../providers/customer-service/customer-service';
 
 /**
@@ -28,10 +28,10 @@ export class CustomerSearchPage {
   }
 
   public searchCustomers(): void {
-    
+    console.log('search customer start')
     // if the value is an empty string don't filter the items
     if (this.nameToSearch && this.nameToSearch.trim() != '') {
-      this.custService.searchCustomers(this.nameToSearch).do(
+      this.custService.searchCustomers(this.nameToSearch).subscribe(
         custs => {
           this.custs = custs
         }
@@ -39,6 +39,10 @@ export class CustomerSearchPage {
     }else{
       this.custs = [];
     }
+  }
+
+  public selectCustomer(cust:Customer){
+    this.navCtrl.push('customer-order', {customer: cust});
   }
 
 }

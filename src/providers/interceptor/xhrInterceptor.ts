@@ -1,8 +1,6 @@
-import { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent, HttpResponse } from '@angular/common/http';
+import { HttpInterceptor, HttpRequest, HttpHandler} from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { registerLocaleData } from '@angular/common';
-import { map } from 'rxjs/operators';
 
 /*
   Generated class for the InterceptorProvider provider.

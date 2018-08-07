@@ -15,7 +15,6 @@ import { CustomerSearchPage } from '../pages/customer-search/customer-search';
 import { AuthService } from '../providers/auth-service/auth-service';
 import { CustomerService } from '../providers/customer-service/customer-service';
 import { OrderService } from '../providers/order-service/order-service';
-import { XhrInterceptor } from '../providers/interceptor/xhrInterceptor';
 @NgModule({
   declarations: [
     MyApp,
@@ -41,7 +40,6 @@ import { XhrInterceptor } from '../providers/interceptor/xhrInterceptor';
     CustomerService,
     OrderService,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    { provide: HTTP_INTERCEPTORS, useClass: XhrInterceptor, multi: true }
   ]
 })
 export class AppModule {}

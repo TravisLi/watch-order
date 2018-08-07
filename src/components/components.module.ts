@@ -1,9 +1,12 @@
 import { NgModule } from '@angular/core';
 import { IonicModule } from 'ionic-angular';
-import { LogoutButtonComponent } from './logout-button/logout-button';
+import { NavBarComponent } from './nav-bar/nav-bar';
+import { OrderBoxComponent } from './order-box/order-box';
 @NgModule({
-	declarations: [LogoutButtonComponent],
+	declarations: [NavBarComponent,
+    OrderBoxComponent],
 	imports: [IonicModule],
-	exports: [LogoutButtonComponent]
+	exports: [NavBarComponent,
+    OrderBoxComponent]
 })
 export class ComponentsModule {}

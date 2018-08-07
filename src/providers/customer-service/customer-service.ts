@@ -12,7 +12,7 @@ import { ENV } from '@app/env';
 @Injectable()
 export class CustomerService {
 
-  private custUrl:string = ENV.restUrl + "/customer";
+  private custUrl:string = ENV.restUrl + "/customerSearch";
 
   constructor(public http: HttpClient) {
     console.log('Hello CustomerService Provider');
