@@ -6,13 +6,12 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>customer-order</ion-title>
-  </ion-navbar>
+  <nav-bar title="{{customer.name}}'s Orders'"></nav-bar>
 
 </ion-header>
 
-
 <ion-content padding>
-
+  <ion-item *ngFor="let order of orders" no-margin>
+    <order-box [order]="order"></order-box>
+  </ion-item>
 </ion-content>

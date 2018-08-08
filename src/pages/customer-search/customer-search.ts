@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams } from 'ionic-angular/umd';
 import { Customer } from 'models/Customer';
-import { CustomerService } from '../../providers/customer-service/customer-service';
+import { CustomerService } from 'providers/customer-service/customer-service';
 
 /**
  * Generated class for the CustomerSearchPage page.

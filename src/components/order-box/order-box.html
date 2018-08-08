@@ -1,15 +1,13 @@
 <!-- Generated template for the OrderBoxComponent component -->
-<ion-item text-wrap>
-  <ion-icon name="pricetag" item-start></ion-icon>
-  <h2>{{order.id}}</h2>
-</ion-item>
+<ion-card no-margin>
 
-<ion-item text-wrap>
-  <ion-icon name="watch" item-start></ion-icon>
-  <h2>{{order.product}}</h2>
-</ion-item>
+  <ion-item text-wrap>
+    <ion-icon name="pricetag" item-start></ion-icon>
+    <h2>{{order.id}}</h2>
+  </ion-item>
 
-<ion-item>
-  <ion-icon name="case" item-start></ion-icon>
-  <h2 text-wrap>{{order.price}}</h2>
-</ion-item>
+  <ion-list *ngFor="let product of order.products" no-margin>
+    <product-box [product]="product"></product-box>
+  </ion-list>
+  
+</ion-card>

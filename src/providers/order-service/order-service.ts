@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Order } from '../../models/Order';
+import { Order } from 'models/order';
 import { Observable } from 'rxjs';
 
 /*
@@ -20,10 +20,10 @@ export class OrderService {
     console.log('Hello OrderServiceProvider Provider');
   }
 
-  public getOrder(custId:number):Observable<Order>{
+  public getOrder(custId:string):Observable<Order[]>{
     let parm:string = '/${custId}/'
     let reqUrl:string = this.orderUrl + parm
-    return this.http.get<Order>(reqUrl);
+    return this.http.get<Order[]>(reqUrl);
   }
 
 }
