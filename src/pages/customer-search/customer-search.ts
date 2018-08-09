@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Customer } from '../../models/Customer';
 import { CustomerService } from '../../providers/customer-service/customer-service';
+import { CustomerOrderPage } from '../customer-order/customer-order';
 
 /**
  * Generated class for the CustomerSearchPage page.
@@ -42,7 +43,7 @@ export class CustomerSearchPage {
   }
 
   public selectCustomer(cust:Customer){
-    this.navCtrl.push('customer-order', {customer: cust});
+    this.navCtrl.push(CustomerOrderPage, {customer: cust});
   }
 
 }

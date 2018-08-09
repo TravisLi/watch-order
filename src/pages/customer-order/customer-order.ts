@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { OrderService } from '../../providers/order-service/order-service';
 import { Order } from '../../models/order';
-import { Customer } from '../../models/Customer';
+import { Customer } from '../../models/customer';
 
 /**
  * Generated class for the CustomerOrderPage page.
@@ -22,7 +22,7 @@ export class CustomerOrderPage {
   public customer: Customer;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public orderService: OrderService) {
-    this.customer = navParams.get("cust");
+    this.customer = navParams.get("customer");
     if(this.customer){
       orderService.getOrder(this.customer.id).subscribe(orders =>{
         this.orders = orders;

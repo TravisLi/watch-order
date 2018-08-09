@@ -1,13 +1,32 @@
 <!-- Generated template for the OrderBoxComponent component -->
-<ion-card no-margin>
+<ion-card>
 
-  <ion-item text-wrap>
-    <ion-icon name="pricetag" item-start></ion-icon>
-    <h2>{{order.id}}</h2>
-  </ion-item>
+  <ion-card-header>
+      <ion-item>
+          <ion-icon name="pricetag" item-start></ion-icon>
+          <h2>Order{{order.id}}</h2>
+        </ion-item>
+  </ion-card-header>
 
-  <ion-list *ngFor="let product of order.products" no-margin>
-    <product-box [product]="product"></product-box>
-  </ion-list>
-  
+  <ion-card-content>
+
+    <ion-item>
+      <ion-icon name="calendar" item-start></ion-icon>
+      <h2>{{order.date | date:'d MMM yyyy'}}</h2>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="trending-down" item-start></ion-icon>
+      <h2>{{order.discount}}%</h2>
+    </ion-item>
+
+    <div *ngFor="let product of order.products" no-margin>
+      <product-box [product]="product"></product-box>
+    </div>
+
+    <ion-item>
+      <ion-icon name="cart" item-start></ion-icon>
+      <h2>{{order.total | currency}}</h2>
+    </ion-item>
+
+  </ion-card-content>
 </ion-card>
