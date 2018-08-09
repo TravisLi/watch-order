@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Order } from '../../models/Order';
+import { Order } from '../../models/order';
 /**
  * Generated class for the OrderBoxComponent component.
  *

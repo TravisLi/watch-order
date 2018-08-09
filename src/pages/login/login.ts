@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { NavController, LoadingController, ToastController } from 'ionic-angular/umd';
+import { NavController, LoadingController, ToastController } from 'ionic-angular';
 import { AuthService } from '../../providers/auth-service/auth-service';
 import { CustomerSearchPage } from '../customer-search/customer-search';
 
