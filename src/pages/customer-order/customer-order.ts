@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular/umd';
-import { OrderService } from 'providers/order-service/order-service';
-import { Order } from 'models/order';
-import { Customer } from 'models/Customer';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { OrderService } from '../../providers/order-service/order-service';
+import { Order } from '../../models/order';
+import { Customer } from '../../models/Customer';
 
 /**
  * Generated class for the CustomerOrderPage page.
