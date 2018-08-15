@@ -3,7 +3,7 @@
 
   <ion-card-header>
       <ion-item>
-          <ion-icon name="pricetag" item-start></ion-icon>
+          <ion-icon name="pricetag" item-start color="gBlue"></ion-icon>
           <h2>Order{{order.id}}</h2>
         </ion-item>
   </ion-card-header>
@@ -11,11 +11,11 @@
   <ion-card-content>
 
     <ion-item>
-      <ion-icon name="calendar" item-start></ion-icon>
+      <ion-icon name="calendar" item-start color="gRed"></ion-icon>
       <h2>{{order.date | date:'d MMM yyyy'}}</h2>
     </ion-item>
     <ion-item>
-      <ion-icon name="trending-down" item-start></ion-icon>
+      <ion-icon name="trending-down" item- color="gYellow"></ion-icon>
       <h2>{{order.discount}}%</h2>
     </ion-item>
 
@@ -24,7 +24,7 @@
     </div>
 
     <ion-item>
-      <ion-icon name="cart" item-start></ion-icon>
+      <ion-icon name="cart" item-start color="gGreen"></ion-icon>
       <h2>{{order.total | currency}}</h2>
     </ion-item>
 
