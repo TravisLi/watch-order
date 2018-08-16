@@ -22,7 +22,7 @@ import { OrderService } from '../providers/order-service/order-service';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp),
+    IonicModule.forRoot(MyApp,{backButtonText:'',}),
     HttpClientModule,
     ComponentsModule,
     LoginPageModule,

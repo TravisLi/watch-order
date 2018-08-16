@@ -20,4 +20,17 @@ export class ProductBoxComponent {
     console.log('Hello ProductBoxComponent Component');
   }
 
+  classify():string {
+    if(this.product.price > 100000){
+      return '1';
+    }
+
+    if(this.product.price > 50000){
+      return '2';
+    }
+
+    return '3';
+
+  }
+
 }

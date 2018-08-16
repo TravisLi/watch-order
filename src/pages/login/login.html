@@ -1,21 +1,21 @@
 <ion-header></ion-header>
 
 <ion-content padding>
-  <div style="max-width: 500px; margin:0 auto; padding-top: 10px;" text-center>
-    <img src="../../assets/imgs/watchLogo.PNG" style="background-color: transparent; max-width: 400px; width: 100%" />
+  <div class="centered" text-center>
+    <img src="../../assets/imgs/watchLogo.PNG" style="background-color: transparent; max-width: 400px; width: 100%" no-margin/>
     <form name="loginForm" (ngSubmit)="login()" #loginForm="ngForm">
       <ion-list>
 
         <ion-item>
           <ion-label color="primary" floating>
-            <ion-icon name="person"></ion-icon> username
+            <ion-icon name="person"></ion-icon> 用戶
           </ion-label>
           <ion-input name="username" type="text" [(ngModel)]="username" #uname="ngModel" required></ion-input>
         </ion-item>
 
         <ion-item>
           <ion-label color="primary" floating>
-            <ion-icon name="key"></ion-icon> password
+            <ion-icon name="key"></ion-icon> 密碼
           </ion-label>
           <ion-input name="password" type="password" [(ngModel)]="password" #pw="ngModel" required></ion-input>
         </ion-item>
@@ -29,13 +29,13 @@
         <ion-row>
           <ion-col col-12>
             <button ion-button type="submit" color="primary" block [disabled]="waiting" [disabled]="!loginForm.form.valid&&!waiting">
-              Login
+              登入
             </button>
           </ion-col>
         </ion-row>
       </ion-grid>
 
-      <button ion-button type="button" clear (click)="clearInput()">Reset</button>
+      <button ion-button type="button" clear (click)="clearInput()">重置</button>
 
     </form>
   </div>

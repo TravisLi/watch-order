@@ -1,3 +1,15 @@
 product-box {
 
+    .first-class {
+        background-color: color($colors, wGold, base);
+      }
+    
+    .second-class {
+        background-color: color($colors, wSilver, base);
+    }
+    
+    .third-class {
+        background-color: color($colors, wBronze, base);
+    }
+
 }
