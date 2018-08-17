@@ -1,10 +1,5 @@
 FROM node:argon
 
-RUN apk --update add tzdata && \
-    cp /usr/share/zoneinfo/Asia/Hong_Kong /etc/localtime && \
-    apk del tzdata && \
-    rm -rf /var/cache/apk/*
-
 # Create app directory
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
