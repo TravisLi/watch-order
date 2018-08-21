@@ -12,4 +12,8 @@ RUN npm install
 COPY . /usr/src/app
 
 EXPOSE 8100
+
+RUN ls
+
+ENTRYPOINT [ "cd", "/usr/src/app" ]
 CMD [ "ionic", "serve", "--prod" ]
