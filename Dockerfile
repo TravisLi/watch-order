@@ -15,5 +15,5 @@ EXPOSE 8100
 
 RUN ls
 
-ENTRYPOINT [ "cd", "/usr/src/app" ]
-CMD [ "ionic", "serve", "--prod" ]
+ENTRYPOINT cd /usr/src/app
+CMD ionic serve --prod
